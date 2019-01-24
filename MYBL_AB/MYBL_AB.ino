@@ -45,7 +45,7 @@ void setup()
 {
   arduboy.boot();                                           // begin with the boot logo en setting up the device to work
   arduboy.audio.begin();
-  arduboy.bootLogoSpritesSelfMasked();
+  //arduboy.bootLogoSpritesSelfMasked();
   arduboy.setFrameRate(60);                                 // set the frame rate of the game at 60 fps
   loadSetEEPROM();
 }
@@ -58,4 +58,3 @@ void loop() {
   ((FunctionPointer) pgm_read_word (&mainGameLoop[gameState]))();
   arduboy.display();
 }
-
