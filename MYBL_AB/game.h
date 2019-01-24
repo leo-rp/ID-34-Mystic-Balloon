@@ -124,6 +124,27 @@ void stateGameNextLevel()
 
   if (canPressButton)
   {
+    /* level selection */
+    if (arduboy.justPressed(DOWN_BUTTON))
+    {
+      if(level >= 1){
+        level-=1;
+      }else
+      {
+        level = (TOTAL_LEVELS - 1);
+      }
+    }
+    else if (arduboy.justPressed(UP_BUTTON))
+    {
+     if(level < (TOTAL_LEVELS - 1) ){
+        level+=1;
+      }
+      else if(level == (TOTAL_LEVELS - 1) )
+      {
+        level = 0;
+      }
+    }
+    /* level selection */
 
     if (pressKeyIsVisible) sprites.drawOverwrite(38, 29, badgePressKey, 0);
     if (arduboy.justPressed(A_BUTTON | B_BUTTON))
